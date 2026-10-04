@@ -159,7 +159,7 @@ function App() {
     const radius = 70;
     const circumference = 2 * Math.PI * radius;
     const strokeDashoffset = circumference - (percentage / 100) * circumference;
-    const isClean = percentage >= 96.0;
+    const isClean = percentage >= 70.0;
 
     return (
       <div className="gauge-wrapper">

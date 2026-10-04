@@ -182,14 +182,6 @@ class BirdNestSegmenter:
         _, buffer_mask = cv2.imencode('.png', visual_mask)
         base64_mask = base64.b64encode(buffer_mask).decode('utf-8')
         
-        # Grade kualitas
-        if kebersihan_percentage >= 96.0:
-            grade = "Grade A (Sangat Bersih - Layak Ekspor)"
-        elif kebersihan_percentage >= 90.0:
-            grade = "Grade B (Bersih Sedang - Perlu Pembersihan Ringan)"
-        else:
-            grade = "Grade C (Kotor - Perlu Pembersihan Intensif)"
-            
         inference_time_ms = (time.time() - start_time) * 1000
             
         return {
@@ -202,8 +194,7 @@ class BirdNestSegmenter:
                 "sarang_pixels": int(sarang_pixels),
                 "kotoran_pixels": int(kotoran_pixels),
                 "total_nest_pixels": int(total_nest_pixels),
-                "inference_time_ms": round(inference_time_ms),
-                "grade": grade
+                "inference_time_ms": round(inference_time_ms)
             },
             "images": {
                 "original": f"data:image/jpeg;base64,{base64_orig}",

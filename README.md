@@ -13,9 +13,10 @@ Semantic Segmentation dengan DeepLabV3+ (Backbone: ResNet-50V2)
 Proyek skripsi ini membangun model semantic segmentation berbasis DeepLabV3+ untuk mendeteksi kontaminasi kotoran (bulu halus, bulu kasar, noda organik) pada citra sarang burung walet secara otomatis pada tingkat piksel.
 
 Output yang dihasilkan:
-- **Masking image (Overlay)** — Visualisasi area kotoran pada gambar asli
-- **Persentase Kebersihan** — Luas area kotoran vs total area sarang
-- **Grade Kualitas** — Klasifikasi otomatis (Grade A / B / C)
+- **Masking Image (Overlay)** — Visualisasi segmentasi area kontaminasi kotoran pada citra asli
+- **Peta Segmentasi (Mask)** — Peta piksel segmentasi 3 kelas (Background, Sarang Bersih, Kotoran)
+- **Kuantifikasi Kebersihan & Kotoran** — Perhitungan persentase kebersihan dan kontaminasi kotoran fisik secara terukur berdasarkan total piksel sarang
+
 
 ---
 
