@@ -1,0 +1,58 @@
+# Konfigurasi Proyek DeepLabV3+
+
+project:
+  name: "Deteksi Kontaminasi Sarang Burung Walet"
+  author: "Made Surya Winata"
+  nim: "2215354088"
+  version: "1.0.0"
+
+dataset:
+  source: "Roboflow"
+  format: "PNG Mask Semantic"
+  num_classes: 3
+  class_names:
+    - "background"
+    - "sarang_bersih"
+    - "kotoran"
+  class_colors:
+    background: [0, 0, 0]
+    sarang_bersih: [255, 255, 255]
+    kotoran: [0, 0, 255]
+
+model:
+  architecture: "DeepLabV3+"
+  backbone: "ResNet50V2"
+  framework: "TensorFlow / Keras"
+  input_size: [256, 256]
+  output_activation: "softmax"
+  model_file: "models/best/deeplabv3plus_walet_light.keras"
+
+training:
+  platform: "Google Colab (GPU)"
+  notebook: "notebooks/DeepLabV3Plus_Walet_v3.ipynb"
+  epochs: 50
+  batch_size: 8
+  optimizer: "Adam"
+  learning_rate: 0.0001
+  loss: "SparseCategoricalCrossentropy"
+  early_stopping:
+    enabled: true
+    patience: 10
+    monitor: "val_loss"
+
+evaluation:
+  metrics:
+    - "iou"
+    - "pixel_accuracy"
+    - "precision"
+    - "recall"
+    - "f1_score"
+
+app:
+  framework: "FastAPI"
+  host: "0.0.0.0"
+  port: 8000
+  max_upload_size_mb: 10
+  allowed_extensions: ["jpg", "jpeg", "png"]
+  upload_folder: "app/uploads"
+  result_folder: "app/results"

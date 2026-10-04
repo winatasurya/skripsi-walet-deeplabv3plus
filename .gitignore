@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+venv/
+.venv/
+
+# Node.js
+frontend/node_modules/
+
+# Runtime files
+app/uploads/*.jpg
+app/uploads/*.jpeg
+app/uploads/*.png
+app/results/*.jpg
+app/results/*.jpeg
+app/results/*.png
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Gemini / AI assistants
+.gemini/
+.agents/
