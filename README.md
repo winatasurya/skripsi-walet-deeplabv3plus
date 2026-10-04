@@ -70,11 +70,12 @@ Klik dua kali `jalankan_aplikasi.bat`, browser akan otomatis terbuka di `http://
 ### Opsi 2: Manual
 
 ```bash
-# Clone repository
+# Pastikan Git LFS aktif agar file model .keras terunduh utuh
+git lfs install
 git clone https://github.com/winatasurya/skripsi-walet-deeplabv3plus.git
 cd skripsi-walet-deeplabv3plus
 
-# Install dependensi
+# Install dependensi (disarankan Python 3.10 atau 3.11)
 pip install -r requirements.txt
 
 # Jalankan server

@@ -22,8 +22,7 @@ echo Menggunakan: %PYTHON_CMD%
 %PYTHON_CMD% --version
 echo.
 
-echo [1/2] Memeriksa dependensi...
-%PYTHON_CMD% -m pip install fastapi uvicorn python-multipart opencv-python-headless pillow numpy --quiet
+%PYTHON_CMD% -m pip install -r requirements.txt --quiet
 if %ERRORLEVEL% neq 0 (
     echo.
     echo [ERROR] Gagal menginstal dependensi.
