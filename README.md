@@ -71,7 +71,7 @@ Klik dua kali `jalankan_aplikasi.bat`, browser akan otomatis terbuka di `http://
 
 ```bash
 # Clone repository
-git clone https://github.com/USERNAME/skripsi-walet-deeplabv3plus.git
+git clone https://github.com/winatasurya/skripsi-walet-deeplabv3plus.git
 cd skripsi-walet-deeplabv3plus
 
 # Install dependensi
